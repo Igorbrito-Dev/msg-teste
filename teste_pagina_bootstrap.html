@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem de Amor</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Estilo da animação dos emojis -->
+    <style>
+        .emoji {
+            font-size: 50px;
+            opacity: 0;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .emoji.show {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h1>Oi meu amor</h1>
+        <p>gostaria de dizer que eu amo vc demais</p>
+        <p>vc é o amor da minha vida</p>
+        <p>Eu te amo muito muito muito neném</p>
+        <p>sou apaixonado por vc</p>
+        <p>E tenho fé que ficaremos juntinho para sempre</p>
+        <p>que jesus abencoe nossa vida</p>
+        <p>Abençoe o nosso Relacionamento</p>
+        <p>nos livrando de todo mal e toda inveja</p>
+        <p>Te amooooooooooooooo <span style="color: red; font-size: 2em;">❤️</span></p>
+        <p>Me desculpa por não ter te dado atenção 🥺🥺</p>
+
+        <!-- Botões de resposta -->
+        <div class="mt-4">
+            <button class="btn btn-success btn-lg mr-2" onclick="mostrarEmoji('feliz')">Sim</button>
+            <button class="btn btn-danger btn-lg" onclick="mostrarEmoji('triste')">Não</button>
+        </div>
+
+        <!-- Emojis que aparecem com animação -->
+        <div id="emoji-feliz" class="emoji">😊</div>
+        <div id="emoji-triste" class="emoji">😢</div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function mostrarEmoji(tipo) {
+            const feliz = document.getElementById("emoji-feliz");
+            const triste = document.getElementById("emoji-triste");
+
+            // Esconde ambos
+            feliz.classList.remove("show");
+            triste.classList.remove("show");
+
+            // Mostra o escolhido
+            if (tipo === 'feliz') {
+                feliz.classList.add("show");
+            } else {
+                triste.classList.add("show");
+            }
+
+            // Esconde depois de 2 segundos
+            setTimeout(() => {
+                feliz.classList.remove("show");
+                triste.classList.remove("show");
+            }, 2000);
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
